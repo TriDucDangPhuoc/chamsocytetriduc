@@ -1,0 +1,346 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hệ thống Hỗ trợ Chăm sóc Y tế</title>
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet"/>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#0d6efd;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+nav{
+    background:#084298;
+    padding:12px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+.hero{
+    padding:70px 20px;
+    text-align:center;
+    background:linear-gradient(to right,#0d6efd,#20c997);
+    color:white;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.form-section{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 2px 12px rgba(0,0,0,0.08);
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    background:#0d6efd;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+button:hover{
+    background:#084298;
+}
+
+.hotline{
+    background:#dc3545;
+    color:white;
+    text-align:center;
+    padding:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+footer{
+    background:#084298;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+/* ==========================
+   N8N CHAT POSITION RIGHT
+========================== */
+
+:root{
+    --chat--toggle--size:70px;
+    --chat--toggle--background:#0d6efd;
+
+    --chat--window--width:420px;
+    --chat--window--height:650px;
+
+    --chat--window--right:20px;
+    --chat--window--bottom:90px;
+
+    --chat--toggle--right:20px;
+    --chat--toggle--bottom:20px;
+}
+
+/* Đảm bảo luôn nằm bên phải */
+.n8n-chat-window{
+    right:20px !important;
+    left:auto !important;
+}
+
+.n8n-chat-toggle{
+    right:20px !important;
+    left:auto !important;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    :root{
+        --chat--window--width:95vw;
+        --chat--window--height:80vh;
+        --chat--window--right:10px;
+        --chat--toggle--right:10px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>HỆ THỐNG HỖ TRỢ CHĂM SÓC Y TẾ</h1>
+    <p>Tư vấn - Đặt lịch khám - Theo dõi sức khỏe</p>
+</header>
+
+<nav>
+    <a href="#gioithieu">Giới thiệu</a>
+    <a href="#chuyenkhoa">Chuyên khoa</a>
+    <a href="#datlich">Đặt lịch khám</a>
+    <a href="#lienhe">Liên hệ</a>
+</nav>
+
+<section class="hero">
+    <h1>Chăm sóc sức khỏe toàn diện</h1>
+    <p>Kết nối người dân với dịch vụ y tế nhanh chóng và thuận tiện</p>
+</section>
+
+<div class="container" id="gioithieu">
+    <h2>Giới thiệu</h2>
+    <br>
+    <p>
+        Website hỗ trợ người dân tra cứu thông tin sức khỏe,
+        đặt lịch khám trực tuyến và tiếp cận các dịch vụ y tế hiện đại.
+    </p>
+</div>
+
+<div class="container" id="chuyenkhoa">
+    <h2>Chuyên khoa</h2>
+    <br>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Nội khoa</h3>
+            <p>Khám và điều trị các bệnh lý nội khoa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Ngoại khoa</h3>
+            <p>Tư vấn và điều trị các bệnh cần can thiệp ngoại khoa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Nhi khoa</h3>
+            <p>Chăm sóc sức khỏe trẻ em.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tim mạch</h3>
+            <p>Khám và theo dõi bệnh lý tim mạch.</p>
+        </div>
+
+    </div>
+</div>
+
+<div class="container" id="datlich">
+
+    <div class="form-section">
+
+        <h2>Đặt lịch khám</h2>
+        <br>
+
+        <form>
+
+            <label>Họ và tên</label>
+            <input type="text" placeholder="Nhập họ tên">
+
+            <label>Số điện thoại</label>
+            <input type="tel" placeholder="Nhập số điện thoại">
+
+            <label>Chuyên khoa</label>
+
+            <select>
+                <option>Nội khoa</option>
+                <option>Ngoại khoa</option>
+                <option>Nhi khoa</option>
+                <option>Tim mạch</option>
+            </select>
+
+            <label>Ngày khám</label>
+            <input type="date">
+
+            <label>Triệu chứng</label>
+            <textarea rows="4"></textarea>
+
+            <button type="submit">
+                Đăng ký lịch khám
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h2>Thông tin sức khỏe</h2>
+    <br>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Dinh dưỡng</h3>
+            <p>Hướng dẫn chế độ ăn uống khoa học.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tiêm chủng</h3>
+            <p>Lịch tiêm chủng cho trẻ em và người lớn.</p>
+        </div>
+
+        <div class="card">
+            <h3>Tập luyện</h3>
+            <p>Các bài tập nâng cao sức khỏe hàng ngày.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="hotline">
+    HOTLINE CẤP CỨU: 115
+</div>
+
+<footer id="lienhe">
+    <h3>Liên hệ</h3>
+    <p>Địa chỉ: Thành phố Huế</p>
+    <p>Email: info@chamsocyte.vn</p>
+    <p>Điện thoại: 0234.xxx.xxxx</p>
+    <br>
+    <p>© 2026 Hệ thống Hỗ trợ Chăm sóc Y tế</p>
+</footer>
+
+<script type="module">
+import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+createChat({
+    webhookUrl: 'https://anxuan2018.app.n8n.cloud/webhook/13a553eb-a79f-460f-a2b2-ecb8378f64a7/chat',
+
+    title: 'MedCare Assistant',
+
+    subtitle: 'Hỗ trợ tư vấn y tế trực tuyến 24/7',
+
+    initialMessages: [
+        'Xin chào! Tôi là Đức nhân viên MedCare Assistant. Tôi có thể hỗ trợ gì cho bạn hôm nay?'
+    ],
+
+    placeholder: 'Nhập câu hỏi về sức khỏe...',
+
+    showWelcomeScreen: false,
+
+    defaultLanguage: 'vi'
+});
+</script>
+
+</body>
+</html>
+```
